@@ -26,12 +26,12 @@ const app_service_1 = __webpack_require__(5);
 const command_subscription_module_1 = __webpack_require__(6);
 const mongoose_1 = __webpack_require__(13);
 const config_1 = __webpack_require__(14);
-const store_module_1 = __webpack_require__(16);
+const seer_store_module_1 = __webpack_require__(16);
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [store_module_1.SeerStoreModule, command_subscription_module_1.CommandSubscriptionModule,
+        imports: [seer_store_module_1.SeerStoreModule, command_subscription_module_1.CommandSubscriptionModule,
             mongoose_1.MongooseModule.forRoot(config_1.config.db.snapshot.full_url),
         ],
         controllers: [app_controller_1.AppController],
@@ -676,19 +676,19 @@ let SeerStoreModule = class SeerStoreModule {
         this.regisHandler();
     }
     regisHandler() {
-        this.eventHandler.set('storeSeer.created', this.onSeerStoreCreatedEvent);
-        this.commandHandler.set('storeSeer.create', this.onCreateSeerStoreCommand);
-        this.commandHandler.set('storeSeer.update', this.onUpdateSeerStoreCommand);
-        this.commandHandler.set('storeSeer.forceUpdateSeerStorePaymentMethod', this.onForceUpdateSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.updateRecommend', this.onUpdateSeerStoreRecommendCommand);
-        this.commandHandler.set('storeSeer.approvePaymentMethod', this.onApproveSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.rejectPaymentMethod', this.onRejectSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.updatePaymentMethod', this.onUpdateSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.resubmitPaymentMethod', this.onResubmitSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.updateReviewPoint', this.onUpdateReviewPointCommand);
-        this.commandHandler.set('storeSeer.addPaymentMethod', this.onAddSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.removePaymentMethod', this.onRemoveSeerStorePaymentMethodCommand);
-        this.commandHandler.set('storeSeer.updateActive', this.onUpdateSeerStoreActiveCommand);
+        this.eventHandler.set('seerStore.created', this.onSeerStoreCreatedEvent);
+        this.commandHandler.set('seerStore.create', this.onCreateSeerStoreCommand);
+        this.commandHandler.set('seerStore.update', this.onUpdateSeerStoreCommand);
+        this.commandHandler.set('seerStore.forceUpdateSeerStorePaymentMethod', this.onForceUpdateSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.updateRecommend', this.onUpdateSeerStoreRecommendCommand);
+        this.commandHandler.set('seerStore.approvePaymentMethod', this.onApproveSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.rejectPaymentMethod', this.onRejectSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.updatePaymentMethod', this.onUpdateSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.resubmitPaymentMethod', this.onResubmitSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.updateReviewPoint', this.onUpdateReviewPointCommand);
+        this.commandHandler.set('seerStore.addPaymentMethod', this.onAddSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.removePaymentMethod', this.onRemoveSeerStorePaymentMethodCommand);
+        this.commandHandler.set('seerStore.updateActive', this.onUpdateSeerStoreActiveCommand);
         this.commandSubscribe.start(`command`, this.commandHandler, this, `service-worker-store-command`, 'command');
     }
     async onSeerStoreCreatedEvent(event) {

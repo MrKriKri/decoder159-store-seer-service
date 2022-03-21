@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { CommandSubscriptionModule } from './command-subscription/command-subscription.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { config } from '../config';
-import {SeerStoreModule} from "./seer-store/store.module";
+import {SeerStoreModule} from "./seer-store/seer-store.module";
 
 
 @Module({
