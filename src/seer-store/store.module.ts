@@ -54,49 +54,49 @@ export class SeerStoreModule implements OnModuleInit {
   }
 
   regisHandler() {
-    this.eventHandler.set('storeSeer.created', this.onSeerStoreCreatedEvent);
+    this.eventHandler.set('seerStore.created', this.onSeerStoreCreatedEvent);
 
-    this.commandHandler.set('storeSeer.create', this.onCreateSeerStoreCommand);
-    this.commandHandler.set('storeSeer.update', this.onUpdateSeerStoreCommand);
+    this.commandHandler.set('seerStore.create', this.onCreateSeerStoreCommand);
+    this.commandHandler.set('seerStore.update', this.onUpdateSeerStoreCommand);
     this.commandHandler.set(
-      'storeSeer.forceUpdateSeerStorePaymentMethod',
+      'seerStore.forceUpdateSeerStorePaymentMethod',
       this.onForceUpdateSeerStorePaymentMethodCommand,
     );
     this.commandHandler.set(
-      'storeSeer.updateRecommend',
+      'seerStore.updateRecommend',
       this.onUpdateSeerStoreRecommendCommand,
     );
     this.commandHandler.set(
-      'storeSeer.approvePaymentMethod',
+      'seerStore.approvePaymentMethod',
       this.onApproveSeerStorePaymentMethodCommand,
     );
     this.commandHandler.set(
-      'storeSeer.rejectPaymentMethod',
+      'seerStore.rejectPaymentMethod',
       this.onRejectSeerStorePaymentMethodCommand,
     );
     this.commandHandler.set(
-      'storeSeer.updatePaymentMethod',
+      'seerStore.updatePaymentMethod',
       this.onUpdateSeerStorePaymentMethodCommand,
     );
 
     this.commandHandler.set(
-      'storeSeer.resubmitPaymentMethod',
+      'seerStore.resubmitPaymentMethod',
       this.onResubmitSeerStorePaymentMethodCommand,
     );
     this.commandHandler.set(
-      'storeSeer.updateReviewPoint',
+      'seerStore.updateReviewPoint',
       this.onUpdateReviewPointCommand,
     );
     this.commandHandler.set(
-      'storeSeer.addPaymentMethod',
+      'seerStore.addPaymentMethod',
       this.onAddSeerStorePaymentMethodCommand,
     );
     this.commandHandler.set(
-      'storeSeer.removePaymentMethod',
+      'seerStore.removePaymentMethod',
       this.onRemoveSeerStorePaymentMethodCommand,
     );
     this.commandHandler.set(
-      'storeSeer.updateActive',
+      'seerStore.updateActive',
       this.onUpdateSeerStoreActiveCommand,
     );
 
