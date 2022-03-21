@@ -1,10 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import {
   Credentials,
-  EventStoreSeerDBClient,
   ChannelCredentialOptions,
-  EventTypeToRecordedEvent,
-  jsonEvent,
+  jsonEvent, EventStoreDBClient,
 } from '@eventstore/db-client';
 import { SingleNodeOptions } from '@eventstore/db-client/dist/Client';
 import { ReadStreamOptions } from '@eventstore/db-client/dist/streams';
@@ -12,14 +10,14 @@ import { ErrorEvent, ExceptionEvent } from './event';
 
 @Injectable()
 export class EventstoreService {
-  private eventstoreClient: EventStoreSeerDBClient;
+  private eventstoreClient: EventStoreDBClient;
 
   connect(
     connectionSetting: SingleNodeOptions,
     channelCredential: ChannelCredentialOptions,
     defaultUserCredentail: Credentials,
   ) {
-    this.eventstoreClient = new EventStoreSeerDBClient(
+    this.eventstoreClient = new EventStoreDBClient(
       connectionSetting,
       channelCredential,
       defaultUserCredentail,

@@ -3,7 +3,7 @@ import { IPayment_method } from './store/payment-method';
 import { IProfile } from './store/profile';
 import { IVideo } from './store/video';
 
-export interface IStoreSeer {
+export interface ISeerStore {
   id: string;
   review_point: number;
   owner: string;

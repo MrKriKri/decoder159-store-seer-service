@@ -9,6 +9,9 @@ export interface IProfile {
   name: string;
   banner_url: IBanner[];
   address: IAddress;
+  description: string
+  portfolio: string
+  service_rate: string
 }
 
 
